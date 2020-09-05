@@ -44,4 +44,21 @@ const convertAppName = (appName) => {
   return dirName;
 };
 
-principalQuestions();
+const principalRunner = async () => {
+  const answers = await principalQuestions();
+  const { appName, appType, appLanguage, appManager } = answers;
+  if (!appName || appName.length <= 0) {
+    console.log(`❌ The name for the app is required.`.red);
+    return process.exit(0);
+  }
+  const folderName = await convertAppName(appName);
+
+  console.log(folderName);
+};
+
+principalRunner();
+
+process.on("SIGINT", function () {
+    console.log("\nCancelled the app generation (CTRL+C was pressed)".italic);
+    process.exit(1);
+  });
