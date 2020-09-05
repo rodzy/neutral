@@ -59,6 +59,6 @@ const principalRunner = async () => {
 principalRunner();
 
 process.on("SIGINT", function () {
-    console.log("\nCancelled the app generation (CTRL+C was pressed)".italic);
-    process.exit(1);
-  });
+  console.log("\nCancelled the app generation (CTRL+C was pressed)".italic);
+  process.exit(1);
+});
