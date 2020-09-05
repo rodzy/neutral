@@ -1,0 +1,9 @@
+{
+  "name": "@neutral/webpack-tsx",
+  "version": "1.0.0",
+  "description": "TSX template using webpack as a bundler",
+  "main": "index.js",
+  "repository": "https://github.com/rodzy/neutral.git",
+  "author": "https://github.com/rodzy",
+  "license": "MIT"
+}
