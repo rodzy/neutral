@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/rodzy/neutral.git",
   "author": "https://github.com/rodzy",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@neutral/cli": "1.0.0"
+  }
 }
