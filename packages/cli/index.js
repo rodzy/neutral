@@ -1,5 +1,7 @@
 require("colors");
 const inquirer = require("inquirer");
+const JS = require("./configs/JS");
+const TS = require("./configs/TS");
 
 const principalQuestions = () => {
   const message =
@@ -44,6 +46,11 @@ const convertAppName = (appName) => {
   return dirName;
 };
 
+const mainConfig = {
+  JavaScript: JS,
+  TypeScript: TS,
+};
+
 const principalRunner = async () => {
   const answers = await principalQuestions();
   const { appName, appType, appLanguage, appManager } = answers;
@@ -53,7 +60,29 @@ const principalRunner = async () => {
   }
   const folderName = await convertAppName(appName);
 
-  console.log(folderName);
+  const app = mainConfig[appLanguage];
+
+  if (!app) {
+    console.log(`${appLanguage} is not yet supported by this CLI tool.`.red);
+    return process.exit(0);
+  }
+
+  const appDirectory = `${process.cwd()}/${folderName}`;
+
+  const res = await app.execute(
+    folderName,
+    appDirectory,
+    appType,
+    appLanguage,
+    appManager
+  );
+
+  if (!res) {
+    console.log("❌ There was an error generating your app.".red);
+    return process.exit(0);
+  }
+
+  return process.exit(0);
 };
 
 principalRunner();
