@@ -1,3 +1,1 @@
-module.exports = () =>{
-    console.log('Hello from CLI :)')
-}
+console.log('Hello from CLI :)')

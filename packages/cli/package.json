@@ -5,5 +5,22 @@
   "main": "index.js",
   "repository": "https://github.com/rodzy/neutral.git",
   "author": "https://github.com/rodzy",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "CLI",
+    "React",
+    "Tooling",
+    "Prototyping",
+    "TypeScript",
+    "JavaScript"
+  ],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^7.3.3",
+    "ora": "^5.0.0",
+    "shelljs": "^0.8.4"
+  }
 }
