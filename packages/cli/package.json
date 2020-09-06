@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The interactive command line interface to overbuild your React applications",
   "main": "index.js",
+  "bin": "index.js",
   "repository": "https://github.com/rodzy/neutral.git",
   "author": "https://github.com/rodzy",
   "license": "MIT",
@@ -17,6 +18,10 @@
   "scripts": {
     "start": "node index.js"
   },
+  "bugs": {
+      "url": "https://github.com/rodzy/neutral/issues"
+  },
+  "homepage": "https://github.com/rodzy/neutral#readme",
   "dependencies": {
     "colors": "^1.4.0",
     "inquirer": "^7.3.3",
