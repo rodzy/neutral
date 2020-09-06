@@ -1,6 +1,8 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ]
+    "private": true,
+    "workspaces": [
+        "packages/*",
+        "packages/@neutral/*",
+        "__mocks__/*"
+    ]
 }
