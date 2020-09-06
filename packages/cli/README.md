@@ -8,7 +8,7 @@ Use `npx` to run the CLI at the desired time
 npx @neutral/cli
 ```
 
-Intrested in contributing? Check the [contribution guide](https://github.com/rodzy/neutral/blob/master/CONTRIBUTE.md)
+Intrested in contributing? Check the [contribution guide](https://github.com/rodzy/neutral/blob/master/.github/CONTRIBUTING.md)
 
 ## Licensed
 
