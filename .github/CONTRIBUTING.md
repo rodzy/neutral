@@ -8,17 +8,18 @@
 
 The setup for this project requires:
 
-- yarn v.1.22.4 +
-- `fork` and `clone` your forked repository.
-- Create a new branch, example: `<Type>/<Description>` on your fork that so you can merge changes on this repo after:
-    - Type: The type for your contribution:
-        - Bug
-        - Feature
-        - Docs
-        - Translation
-        - etc...
-    - Description: The description for your
-    contribution (Example: My-Cool-Contribution)
+-   yarn v.1.22.4 +:
+    -   Why yarn? This project uses yarn workspaces feature to handle a monorepo like style.
+-   `fork` and `clone` your forked repository.
+-   Create a new branch, example: `<Type>/<Description>` on your fork that so you can merge changes on this repo after:
+    -   Type: The type for your contribution:
+        -   Bug
+        -   Feature
+        -   Docs
+        -   Translation
+        -   etc...
+    -   Description: The description for your
+        contribution (Example: My-Cool-Contribution)
 
 ## Pull requests
 
