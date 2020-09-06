@@ -1,0 +1,7 @@
+__tests__
+__mocks__
+.version
+.build
+.prod
+.production
+.dist
