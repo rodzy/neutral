@@ -1,10 +1,19 @@
 import * as React from "react";
-import "./index.css"
+import "./App.css";
 
 export const App = (): JSX.Element => {
+    const [counter, setcounter] = React.useState<number>(0);
     return (
-        <div className="App">
-            <h1>Hello from tsx using webpack</h1>
+        <div className="App-header">
+            <h2>@neutral/TSX Webpack</h2>
+            <p className="App-paragraph">Render count: {counter}</p>
+            <button
+                className="App-button"
+                onClick={() => setcounter(counter + 1)}
+            >
+                Counter
+            </button>
+            <a href="https://github.com/rodzy/neutral" target="_blank">GitHub</a>
         </div>
     );
 };
