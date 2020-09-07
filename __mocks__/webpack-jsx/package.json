@@ -1,8 +1,13 @@
 {
   "name": "webpack-jsx",
+  "description": "A production ready React JavaScript template using webpack to bundle",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": {
+    "name": "Isaac Rodríguez",
+    "url": "https://github.com/rodzy"
+  },
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

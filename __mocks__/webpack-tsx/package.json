@@ -1,5 +1,6 @@
 {
   "name": "webpack-tsx",
+  "description": "A production ready React TypeScript template using webpack to bundle",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
