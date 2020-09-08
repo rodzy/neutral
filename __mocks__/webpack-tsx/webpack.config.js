@@ -1,9 +1,12 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     target: "web",
     // Switch the mode between development | production | none
     mode: "development",
+    devtool: "inline-source-map",
     entry: {
         // eslint-disable-next-line no-undef
         app: path.join(__dirname, "src", "index.tsx"),
@@ -13,6 +16,15 @@ module.exports = {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
     },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HTMLWebpackPlugin({
+            filename: "index.html",
+            inject: true,
+            // eslint-disable-next-line no-undef
+            template: path.resolve(__dirname, "index.html"),
+        }),
+    ],
     module: {
         rules: [
             {
