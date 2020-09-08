@@ -6,7 +6,7 @@ module.exports = {
     mode: "development",
     entry: {
         // eslint-disable-next-line no-undef
-        app: path.join(__dirname, "src", "index.tsx"),
+        app: path.join(__dirname, "src", "index.js"),
     },
     output: {
         // eslint-disable-next-line no-undef
@@ -16,7 +16,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?/,
+                test: /\.(js|jsx)?/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
@@ -37,7 +37,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js"],
+        extensions: [".js", ".jsx", ".cjs"],
     },
     /* The dev server options are optional switch the port or the base
         in case your port is unavailable */
