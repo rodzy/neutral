@@ -15,14 +15,13 @@
     color: white;
 }
 
-.App-paragraph{
+.App-paragraph {
     padding-top: 30px;
 }
 
-.App-button{
+.App-button {
     margin: 30px;
-    padding:20px;
-    border:0px;
-    border-radius: 1rem;
+    padding: 10px;
+    border: 1px solid;
     font-size: 20px;
 }

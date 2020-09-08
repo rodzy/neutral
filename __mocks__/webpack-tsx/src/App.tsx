@@ -11,9 +11,11 @@ export const App = (): JSX.Element => {
                 className="App-button"
                 onClick={() => setcounter(counter + 1)}
             >
-                Counter
+                Counter <span role="emoji">🧐</span>
             </button>
-            <a href="https://github.com/rodzy/neutral" target="_blank">GitHub</a>
+            <a href="https://github.com/rodzy/neutral" target="_blank">
+                GitHub
+            </a>
         </div>
     );
 };
