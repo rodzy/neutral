@@ -1,18 +1,24 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     target: "web",
-    // Switch the mode between development | production | none
-    mode: "development",
     entry: {
-        // eslint-disable-next-line no-undef
         app: path.join(__dirname, "src", "index.js"),
     },
     output: {
-        // eslint-disable-next-line no-undef
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
     },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HTMLWebpackPlugin({
+            filename: "index.html",
+            inject: true,
+            template: path.resolve(__dirname, "index.html"),
+        }),
+    ],
     module: {
         rules: [
             {
@@ -38,11 +44,5 @@ module.exports = {
     },
     resolve: {
         extensions: [".js", ".jsx", ".cjs"],
-    },
-    /* The dev server options are optional switch the port or the base
-        in case your port is unavailable */
-    devServer: {
-        contentBase: "./",
-        port: 4000,
     },
 };
