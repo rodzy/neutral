@@ -6,11 +6,11 @@ module.exports = {
     target: "web",
     entry: {
         // eslint-disable-next-line no-undef
-        app: path.join(__dirname, "src", "index.tsx"),
+        app: path.join(__dirname, "../src", "index.tsx"),
     },
     output: {
         // eslint-disable-next-line no-undef
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "../", "dist"),
         filename: "bundle.js",
     },
     plugins: [
@@ -19,7 +19,7 @@ module.exports = {
             filename: "index.html",
             inject: true,
             // eslint-disable-next-line no-undef
-            template: path.resolve(__dirname, "index.html"),
+            template: path.resolve(__dirname, "../", "index.html"),
         }),
     ],
     module: {
@@ -48,4 +48,4 @@ module.exports = {
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
     },
-}
+};
