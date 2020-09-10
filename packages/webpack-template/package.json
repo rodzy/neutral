@@ -1,0 +1,9 @@
+{
+  "name": "webpack-template",
+  "description": "Webpack template for @neutral/cli",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+      "template"
+  ]
+}
