@@ -30,7 +30,7 @@ const mainQuestions = async () => {
     return selectedConfigList;
 };
 
-const createReactAppJS = (appName, appType, appLanguage, appManager) => {
+const createReactApp = (appName, appType, appLanguage, appManager) => {
     console.log("\n");
     const route = `${(process.cwd() + "\\" + appName).bold.cyan}`;
     const spinner = ora(
@@ -39,27 +39,32 @@ const createReactAppJS = (appName, appType, appLanguage, appManager) => {
     ).start();
     spinner.spinner = "dots";
     spinner.color = "cyan";
+    const statement =
+        appLanguage === "TypeScript" ? "--template typescript" : "";
     if (appType === "create-react-app (Default)") {
         if (appManager === "npm") {
             return new Promise((resolve, reject) => {
-                sh.exec(`npx create-react-app ${appName} --use-npm`, () => {
-                    const redirect = sh.cd(appName);
-                    if (redirect.code !== 0) {
-                        console.log(
-                            `❌ Error while searching for ${appName}`.red
-                        );
-                        reject();
+                sh.exec(
+                    `npx create-react-app ${appName} --use-npm ${statement}`,
+                    () => {
+                        const redirect = sh.cd(appName);
+                        if (redirect.code !== 0) {
+                            console.log(
+                                `❌ Error while searching for ${appName}`.red
+                            );
+                            reject();
+                        }
+                        if (resolve()) {
+                            spinner.succeed();
+                        } else {
+                            spinner.fail();
+                        }
                     }
-                    if (resolve()) {
-                        spinner.succeed();
-                    } else {
-                        spinner.fail();
-                    }
-                });
+                );
             });
         } else {
             return new Promise((resolve, reject) => {
-                sh.exec(`npx create-react-app ${appName} `, () => {
+                sh.exec(`npx create-react-app ${appName} ${statement} `, () => {
                     const redirect = sh.cd(appName);
                     if (redirect.code !== 0) {
                         console.log(
@@ -95,13 +100,21 @@ const createReactAppJS = (appName, appType, appLanguage, appManager) => {
     }
 };
 
-const installDependencies = async (selectedConfigList, appManager) => {
+const installDependencies = async (
+    selectedConfigList,
+    appLanguage,
+    appManager
+) => {
     let dependencies = [];
     let devDependencies = [];
 
     selectedConfigList.forEach((config) => {
-        dependencies = [...dependencies, ...config.dependencies];
-        devDependencies = [...devDependencies, ...config.devDependencies];
+        if (appLanguage === "JavaScript") {
+            dependencies = [...dependencies, ...config.dependencies];
+        } else {
+            dependencies = [...dependencies, ...config.dependencies];
+            devDependencies = [...devDependencies, ...config.devDependencies];
+        }
     });
 
     await new Promise((resolve) => {
@@ -157,8 +170,8 @@ exports.execute = async (
     appManager
 ) => {
     const preferedConfig = await mainQuestions();
-    await createReactAppJS(appName, appType, appLanguage, appManager);
-    await installDependencies(preferedConfig, appManager);
+    await createReactApp(appName, appType, appLanguage, appManager);
+    await installDependencies(preferedConfig, appLanguage, appManager);
 
     console.log(`✅ Created ${appType} on ${appName}`);
     return true;
