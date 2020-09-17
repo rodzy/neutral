@@ -2,6 +2,7 @@ require("colors");
 const inquirer = require("inquirer");
 const JS = require("./configs/JS");
 const TS = require("./configs/TS");
+const createReactApp=require("./create-react-app")
 
 const principalQuestions = () => {
   const message =
@@ -47,7 +48,7 @@ const convertAppName = (appName) => {
 };
 
 const mainConfig = {
-  JavaScript: JS,
+  cra: createReactApp,
   TypeScript: TS,
 };
 
