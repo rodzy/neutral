@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 // const fse = require("fs-extra");
 // const set = require("lodash.set");
 const ora = require("ora");
-const settings = require("./settings");
+const settings = require("../settings");
 
 sh.config.silent = true;
 

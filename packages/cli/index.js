@@ -1,6 +1,5 @@
 require("colors");
 const inquirer = require("inquirer");
-const TS = require("./configs/TS");
 const createReactApp = require("./create-react-app");
 
 const principalQuestions = () => {
@@ -50,7 +49,7 @@ const convertAppName = (appName) => {
 
 const mainConfig = {
     cra: createReactApp,
-    webpack: TS,
+    webpack: "webpack --config",
 };
 
 const principalRunner = async () => {
