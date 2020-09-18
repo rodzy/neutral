@@ -1,6 +1,5 @@
 module.exports = {
-    name: "reactRouter",
-    question: "Would you like to add routing?",
+    name:"React Router Dom",
     dependencies: ["react-router-dom@latest"],
     devDependencies: ["@types/react-router-dom", "@types/history"],
     packageEntries: [],

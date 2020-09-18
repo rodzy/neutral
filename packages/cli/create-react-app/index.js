@@ -11,20 +11,23 @@ sh.config.silent = true;
 const mainQuestions = async () => {
     const selectedConfigList = [];
 
-    const questions = settings.map((config) => ({
-        type: "confirm",
+    const questions = settings.questions.map((config) => ({
+        type: config.type,
         name: config.name,
         message: config.question,
+        choices: config.choices,
     }));
 
     const answers = await inquirer.prompt(questions);
 
-    settings.forEach((config) => {
+    settings.questions.forEach((config) => {
         const matchingAnswer = answers[config.name];
-
-        if (matchingAnswer) {
-            selectedConfigList.push(config);
+        if (matchingAnswer !== "No") {
+            selectedConfigList.push(
+                settings.packages.find((item) => item.name === matchingAnswer)
+            );
         }
+        console.log(selectedConfigList);
     });
 
     return selectedConfigList;

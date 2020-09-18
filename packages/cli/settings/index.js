@@ -1,3 +1,6 @@
-const router = require("./routers/react-router-dom");
+const prompt = require("./routers/prompt");
+const router = require("./routers");
 
-module.exports = [router];
+const questions = [prompt];
+
+module.exports = { questions: questions, packages: router };
