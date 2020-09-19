@@ -29,8 +29,9 @@ An interactive command line interface to bootstrap and get the latest dependenci
 -   Import common packages, such as:
 
     -   [React router](https://reactrouter.com/)
+    -   [Wouter](https://github.com/molefrog/wouter);
     -   [React helmet](https://www.npmjs.com/package/react-helmet)
-    -   [React hook forms](https://react-hook-form.com/)
+    -   [React hook form](https://react-hook-form.com/)
     -   [Formik](https://formik.org/)
     -   [React Final Form](https://final-form.org/react)
     -   [Axios](https://www.npmjs.com/package/axios)
