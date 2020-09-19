@@ -22,7 +22,7 @@ const mainQuestions = async () => {
 
     settings.questions.forEach((config) => {
         const matchingAnswer = answers[config.name];
-        if (matchingAnswer !== "No") {
+        if (matchingAnswer !== "❌ No, thank you") {
             selectedConfigList.push(
                 settings.packages.find((item) => item.name === matchingAnswer)
             );
