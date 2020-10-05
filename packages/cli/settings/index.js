@@ -1,6 +1,9 @@
-const prompt = require("./routers/prompt");
+const routerPrompt = require("./routers/prompt");
+const formPrompt = require("./forms/prompt");
 const router = require("./routers");
+const forms = require("./forms");
 
-const questions = [prompt];
+const questions = [routerPrompt, formPrompt];
+const packages = [router, forms];
 
-module.exports = { questions: questions, packages: router };
+module.exports = { questions: questions, packages: packages };
